@@ -126,6 +126,7 @@ class QuantizationMethod(str, Enum):
     QUANTO = "quanto"
     EETQ = "eetq"
     HQQ = "hqq"
+    MXFP4 = "mxfp4"
 
 
 class RopeScaling(str, Enum):
@@ -947,6 +948,21 @@ register_model_group(
 
 register_model_group(
     models={
+        "GPT-OSS-20B-Thinking": {
+            DownloadSource.DEFAULT: "openai/gpt-oss-20b",
+            DownloadSource.MODELSCOPE: "openai/gpt-oss-20b",
+        },
+        "GPT-OSS-120B-Thinking": {
+            DownloadSource.DEFAULT: "openai/gpt-oss-120b",
+            DownloadSource.MODELSCOPE: "openai/gpt-oss-120b",
+        },
+    },
+    template="gpt",
+)
+
+
+register_model_group(
+    models={
         "Granite-3.0-1B-A400M-Base": {
             DownloadSource.DEFAULT: "ibm-granite/granite-3.0-1b-a400m-base",
             DownloadSource.MODELSCOPE: "AI-ModelScope/granite-3.0-1b-a400m-base",
@@ -1708,6 +1724,18 @@ register_model_group(
         "MiniCPM-V-2_6": {
             DownloadSource.DEFAULT: "openbmb/MiniCPM-V-2_6",
             DownloadSource.MODELSCOPE: "OpenBMB/MiniCPM-V-2_6",
+        },
+    },
+    template="minicpm_v",
+    multimodal=True,
+)
+
+
+register_model_group(
+    models={
+        "MiniCPM-V-4": {
+            DownloadSource.DEFAULT: "openbmb/MiniCPM-V-4",
+            DownloadSource.MODELSCOPE: "OpenBMB/MiniCPM-V-4",
         },
     },
     template="minicpm_v",
@@ -2726,6 +2754,14 @@ register_model_group(
         "Qwen3-4B-Thinking": {
             DownloadSource.DEFAULT: "Qwen/Qwen3-4B",
             DownloadSource.MODELSCOPE: "Qwen/Qwen3-4B",
+        },
+        "Qwen3-4B-Instruct-2507": {
+            DownloadSource.DEFAULT: "Qwen/Qwen3-4B-Instruct-2507",
+            DownloadSource.MODELSCOPE: "Qwen/Qwen3-4B-Instruct-2507",
+        },
+        "Qwen3-4B-Thinking-2507": {
+            DownloadSource.DEFAULT: "Qwen/Qwen3-4B-Thinking-2507",
+            DownloadSource.MODELSCOPE: "Qwen/Qwen3-4B-Thinking-2507",
         },
         "Qwen3-8B-Thinking": {
             DownloadSource.DEFAULT: "Qwen/Qwen3-8B",
