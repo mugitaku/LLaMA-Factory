@@ -911,12 +911,12 @@ register_model_group(
 
 register_model_group(
     models={
-        "GLM-4.5V-Air-Thinking":{
+        "GLM-4.5V-Air-Thinking": {
             DownloadSource.DEFAULT: "zai-org/GLM-4.5V",
             DownloadSource.MODELSCOPE: "ZhipuAI/GLM-4.5V",
         }
     },
-    template="glm45v",
+    template="glm4v_moe",
     multimodal=True,
 )
 
@@ -1663,16 +1663,32 @@ register_model_group(
 
 register_model_group(
     models={
-        "MiMo-7B-VL-Instruct": {
-            DownloadSource.DEFAULT: "XiaomiMiMo/MiMo-VL-7B-SFT",
-            DownloadSource.MODELSCOPE: "XiaomiMiMo/MiMo-VL-7B-SFT",
-        },
         "MiMo-7B-VL-RL": {
             DownloadSource.DEFAULT: "XiaomiMiMo/MiMo-VL-7B-RL",
             DownloadSource.MODELSCOPE: "XiaomiMiMo/MiMo-VL-7B-RL",
         },
+        "MiMo-VL-7B-RL-2508": {
+            DownloadSource.DEFAULT: "XiaomiMiMo/MiMo-VL-7B-RL-2508",
+            DownloadSource.MODELSCOPE: "XiaomiMiMo/MiMo-VL-7B-RL-2508"
+        }
     },
     template="mimo_vl",
+    multimodal=True,
+)
+
+
+register_model_group(
+    models={
+        "MiMo-7B-VL-Instruct": {
+            DownloadSource.DEFAULT: "XiaomiMiMo/MiMo-VL-7B-SFT",
+            DownloadSource.MODELSCOPE: "XiaomiMiMo/MiMo-VL-7B-SFT",
+        },
+        "MiMo-VL-7B-SFT-2508": {
+            DownloadSource.DEFAULT: "XiaomiMiMo/MiMo-VL-7B-SFT-2508",
+            DownloadSource.DEFAULT: "XiaomiMiMo/MiMo-VL-7B-SFT-2508"
+        },
+    },
+    template="qwen2_vl",
     multimodal=True,
 )
 

@@ -1047,8 +1047,9 @@ register_template(
 )
 
 
+# copied from glm4 template
 register_template(
-    name="glm45v",
+    name="glm4v_moe",
     format_user=StringFormatter(slots=["<|user|>\n{{content}}<|assistant|>"]),
     format_assistant=StringFormatter(slots=["\n{{content}}"]),
     format_system=StringFormatter(slots=["<|system|>\n{{content}}"]),
@@ -1551,7 +1552,7 @@ register_template(
     format_assistant=StringFormatter(slots=["{{content}}<|im_end|>\n"]),
     format_system=StringFormatter(slots=["<|im_start|>system\n{{content}}<|im_end|>\n"]),
     stop_words=["<|im_end|>"],
-    default_system="You are Qwen, created by Alibaba Cloud. You are a helpful assistant.",
+    default_system="You are a helpful assistant. You can accept audio and text input and output voice and text.",
     mm_plugin=get_mm_plugin(name="minicpm_v", image_token="<image>", video_token="<video>", audio_token="<audio>"),
 )
 
